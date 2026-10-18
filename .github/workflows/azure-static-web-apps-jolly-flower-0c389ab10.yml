@@ -3,7 +3,7 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - main
+      - produccion
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -30,8 +30,9 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: ".output/public" # La ruta exacta que me mostraste
-          app_build_command: "npm install --legacy-peer-deps && npm run build"
+          output_location: "/" # Dejamos solo la barra diagonal
+          app_build_command: "" # DEJA ESTO COMPLETAMENTE VACÍO (Borra el npm run build)
+
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
